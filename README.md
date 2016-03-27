@@ -16,17 +16,12 @@ You should now see the startup screen of de C64 (possibly in other colors)!
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/4/48/C64_startup_animiert.gif "C64 startup screen")
 
 Using pokes you can change the background color, position of text and write character to screen.
-Of course you can also enter simple programs like 
+Of course you can also enter simple programs like: 
 ```basic
   10 print "C64 lives!"
   20 goto 10
 ```
 
 ###Remarks regarding speed:
-The max speed is 5 frames per second, this amounts to 5 kB (kilobytes) per second
-Reduced the number of RAM bytes send from esp8266 to zero and
-also reduced the processing of this info in browser to zero bytes,
-but this has no effect on framerate (still 5 fps)
-slow speed possibly due to protocolo XMLHTTP!
-Serial debug works at 115200 baudrate, so 14kB per second and would make 14 fps possible!
+The emulation speed within the esp8266 is higher than the update speed of the browser. The maximum speed of the browser implementation is 5 frames per second, possibly due to the use of the XMLHTTP protocol! Any ideas/code suggestions how to solve this are most welcome!
 
