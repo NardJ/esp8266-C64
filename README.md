@@ -1,6 +1,6 @@
-## 
-![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CBM_Logo.svg/150px-CBM_Logo.svg.png "C64 Logo")
-esp8266C64
+##esp8266-C64
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CBM_Logo.svg/150px-CBM_Logo.svg.png" width="48">
+
 
 This is a C64 Emulator running on an esp8266 using a webbrowser as a display.
 For more info see [http://www.esp8266.com/viewtopic.php?f=8&t=4704&p=28932#p28932](http://www.esp8266.com/viewtopic.php?f=8&t=4704&p=28932#p28932).
