@@ -11,15 +11,19 @@ The code was based upon [http://forum.arduino.cc/index.php?topic=193216.msg17930
 3. Browse to the ip address of your esp8266
 
 ###Have fun
-You should now see the startup screen of de C64 (possibly in other colors)!
+You should now see the startup screen of de C64!
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/4/48/C64_startup_animiert.gif "C64 startup screen")
 
-Using pokes you can change the background color, position of text and write character to screen.
+Using pokes you can change the background color, position of text and write character to screen. 
+```basic
+  POKE 53280,2
+  POKE 53281,5
+```  
 Of course you can also enter simple programs like: 
 ```basic
-  10 print "C64 lives!"
-  20 goto 10
+  10 PRINT "C64 lives!"
+  20 GOTO 10
 ```
 
 ###Remarks regarding speed:
