@@ -1,4 +1,4 @@
-##esp8266-C64 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CBM_Logo.svg/150px-CBM_Logo.svg.png" width="48" align="top" style="float: right;">
+##esp8266-C64 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CBM_Logo.svg/150px-CBM_Logo.svg.png" width="48" align="middle" style="float: right;">
 
 
 This is a C64 Emulator running on an esp8266 using a webbrowser as a display.
