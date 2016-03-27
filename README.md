@@ -15,7 +15,7 @@ You should now see the startup screen of de C64!
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/4/48/C64_startup_animiert.gif "C64 startup screen")
 
-Using pokes you can change the background color, position of text and write character to screen. 
+Using pokes you can change the background color, position of text and write character to screen:
 ```basic
   POKE 53280,2
   POKE 53281,5
