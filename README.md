@@ -14,8 +14,8 @@ The code was based upon [http://forum.arduino.cc/index.php?topic=193216.msg17930
 You should now see the boot screen of de C64!
 Using pokes you can change the background color, position of text and write character to screen.
 Of course you can also enter simple programs like 
-`  10 print "C64 lives!"
-  20 goto 10`
+'  10 print "C64 lives!"
+  20 goto 10'
 
 ##Remarks regarding speed:
 The max speed is 5 frames per second, this amounts to 5 kB (kilobytes) per second
