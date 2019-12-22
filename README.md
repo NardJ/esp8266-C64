@@ -4,6 +4,10 @@ This is a C64 Emulator running on an esp8266 using a webbrowser as a display.
 For more info see [http://www.esp8266.com/viewtopic.php?f=8&t=4704&p=28932#p28932](http://www.esp8266.com/viewtopic.php?f=8&t=4704&p=28932#p28932).
 The code was based upon [http://forum.arduino.cc/index.php?topic=193216.msg1793065#msg1793065](http://forum.arduino.cc/index.php?topic=193216.msg1793065#msg1793065)
 
+###Code is now prepared for
+- Arduino IDE 1.8.10
+- esp8266 board version 2.4.2 (important!) 
+
 ###Installation
 1. Extract the files in the zip
 2. Start Arduino editor and open the ino file
