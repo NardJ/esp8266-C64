@@ -66,7 +66,9 @@ But such a pity, clipboard does not work...
 ```
 Note that the {CBM-x} represents the graphic on that particular key (press the c= key and the letter to produce it)
 
-For more examples go here: https://github.com/matgoebl/esp8266-ntsc-c64-emulator/tree/master/prg
+For more examples go here: 
+https://github.com/matgoebl/esp8266-ntsc-c64-emulator/tree/master/prg
+https://gkanold.wixsite.com/homeputerium/kopie-von-games-list-2019-2
 
 ### Remarks regarding speed:
 The emulation speed within the esp8266 is higher than the update speed of the browser. The maximum speed of the browser implementation is 5 frames per second, possibly due to the use of the XMLHTTP protocol! Any ideas/code suggestions how to solve this are most welcome!
