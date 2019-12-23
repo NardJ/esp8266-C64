@@ -1,20 +1,20 @@
-##ESP8266-C64
+## ESP8266-C64
 
 This is a C64 Emulator running on an esp8266 using a webbrowser as a display.
 For more info see [http://www.esp8266.com/viewtopic.php?f=8&t=4704&p=28932#p28932](http://www.esp8266.com/viewtopic.php?f=8&t=4704&p=28932#p28932).
 The code was based upon [http://forum.arduino.cc/index.php?topic=193216.msg1793065#msg1793065](http://forum.arduino.cc/index.php?topic=193216.msg1793065#msg1793065)
 
-###Chrome browsers are incompatible !
+### Chrome browsers are incompatible !
 Compatibility is with Interfernet Exploder Browser from MickeySuck running on Winblows IO (tested).
 Error is commented in source for you...
 
-###Code is now prepared for
+### Code is now prepared for
 - Arduino IDE 1.8.10
 - esp8266 board tools version 2.4.2 (important!) 
 - LwIP 1.4 Higher bandwidth
 - CPU frequency 160MHz
 
-###Installation
+### Installation
 1. Extract the files in the zip
 2. Start Arduino editor and open the ino file
 3. Upload the ino file to the esp8266
@@ -23,12 +23,12 @@ Error is commented in source for you...
 6. If does not do it all, go to any address, eg. commodore.com or whatever else...
 7. Enjoy...
 
-###Have fun
+### Have fun
 You should now see the startup screen of de C64!
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/4/48/C64_startup_animiert.gif "C64 startup screen")
 
-###BASIC example
+### BASIC example
 ```basic
 10 FOR I = 1 TO 10
 20 PRINT "HELLO WORLD"
@@ -45,7 +45,7 @@ Of course you can also enter simple programs like:
   20 GOTO 10
 ```
 
-###Tetris BASIC code example
+### Tetris BASIC code example
 But such a pity, clipboard does not work...
 ```basic
 1 a$="efijefijefijefijbfjnhijkbfjnhijkijfgaefjijfgaefjefjkiefbefjkiefbbfjidefj" 
@@ -65,6 +65,6 @@ But such a pity, clipboard does not work...
 15 b=0:forx=0to3:b=bor1andpeek(w+e(g+x)):next:b=b>0:w=-t*b-w*notb:l$="a":return 
 ```
 
-###Remarks regarding speed:
+### Remarks regarding speed:
 The emulation speed within the esp8266 is higher than the update speed of the browser. The maximum speed of the browser implementation is 5 frames per second, possibly due to the use of the XMLHTTP protocol! Any ideas/code suggestions how to solve this are most welcome!
 
