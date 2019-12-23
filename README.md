@@ -5,8 +5,6 @@ For more info see [http://www.esp8266.com/viewtopic.php?f=8&t=4704&p=28932#p2893
 The code was based upon [http://forum.arduino.cc/index.php?topic=193216.msg1793065#msg1793065](http://forum.arduino.cc/index.php?topic=193216.msg1793065#msg1793065)
 
 ### Chrome browsers are incompatible !
-Compatibility is with Interfernet Exploder Browser from MickeySuck running on Winblows IO (tested).
-Error is commented in source for you...
 
 ### Code is now prepared for
 - Arduino IDE 1.8.10
