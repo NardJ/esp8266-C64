@@ -64,6 +64,7 @@ But such a pity, clipboard does not work...
 14 l=l+40*not-q:next:print"{home}";z:goto7 
 15 b=0:forx=0to3:b=bor1andpeek(w+e(g+x)):next:b=b>0:w=-t*b-w*notb:l$="a":return 
 ```
+Note that the {CBM-x} represents the graphic on that particular key (press the c= key and the letter to produce it)
 
 ### Remarks regarding speed:
 The emulation speed within the esp8266 is higher than the update speed of the browser. The maximum speed of the browser implementation is 5 frames per second, possibly due to the use of the XMLHTTP protocol! Any ideas/code suggestions how to solve this are most welcome!
