@@ -56,7 +56,24 @@ void send_uint8(const uint8_t *data, const size_t data_length) {
 */  
   String data_type="application/octet-stream";
   //String data_type="image/png";
+  /* Content length is BIG problem in Chrome browsers
+   *  - when specified, it make double definition in header, so Chrome is going to madness
+   *  - when set to unknown, then it fall to chunks encodings without chinks..... bad
+   *  - when unspecified it did not boot at all
+   *  
+   *  Compatibility is with Interfernet Exploder Browser from MickeySuck (texted on in Winblows 10 only)
+   *  ==================================================================================================
+   *  
+   *  https://duckduckgo.com/?q=esp8266+err_response_headers_multiple_content_length
+   *  https://gist.github.com/spacehuhn/6c89594ad0edbdb0aad60541b72b2388
+   *  https://github.com/esp8266/Arduino/issues/3205
+   *  https://github.com/esp8266/Arduino/issues/2121
+   *  https://www.esp8266.com/viewtopic.php?p=48732
+   *  https://stackoverflow.com/questions/37711762/issue-loading-files-w-spiffs-err-content-length-mismatch
+   *  
+   */
   server.sendHeader("Content-Length", String(data_length));
+///server.setContentLength(CONTENT_LENGTH_UNKNOWN);
   server.send(200, data_type.c_str(), "");
 
   WiFiClient client = server.client();
@@ -71,11 +88,13 @@ const char gui[] PROGMEM =
   "<meta http-equiv='Expires' content='0' />\n"
   "<script src='VICII.js'></script>\n"
   "</head>\n"
-  "<body>\n<h1 style='font-family:Lucida Console;font-size:32px;margin:0px;padding:0px'>VIC-II client</h1>\n"
-  "<div style='width:384px;font-size:12px;'><div style='float:right;'>for use with ESP8266 based C64 CPU emulator</div><br><div style='float:right;'><a href='http://www.esp8266.com/viewtopic.php?f=32&t=4596&start=5'>info at esp8266.com forum</a></div></div>\n"
-  "<div id='fps' style='background-color:#FFFFAA;border:1px solid black;width:42px;height:24px;text-align:center;line-height:22px;font-size:12px;'>10 fps</div>"
-  "<canvas id='vicoutput' style='background-color:#A4A4FE;border:1px;width:384px;height:264px;'></canvas>\n"
-  "<DIV id='Log' style='background-color:#FFFFAA;width:378px;height:80px;border:1px solid black;font-family:Lucida console;font-size:10px;padding:2px;overflow:auto;'></div>\n"
+  "<body>\n<h1 style='font-family:Lucida Console;font-size:32px;margin:0px;padding:0px'>Commodore C-64</h1>\n"
+  "<div id='fps' style='display:none'></div>"
+  //"<div id='fps' style='display:none;background-color:#FFFFAA;border:1px solid black;width:42px;height:24px;text-align:center;line-height:22px;font-size:12px;'>10 fps</div>"
+  "<canvas id='vicoutput' style='background-color:#333333;border:1px;width:384px;height:264px;'></canvas>\n"
+  //"<canvas id='vicoutput' style='background-color:#A4A4FE;border:1px;width:384px;height:264px;'></canvas>\n"
+  "<DIV id='Log' style='display:none'></div>\n"
+  //"<DIV id='Log' style='display:none;background-color:#FFFFAA;width:378px;height:80px;border:1px solid black;font-family:Lucida console;font-size:10px;padding:2px;overflow:auto;'></div>\n"
   "<DIV id='PopUp'\n"
   " style='display: none; position: absolute; left: 30px; top: 50px; border: solid black 1px; padding: 10px; background-color: rgb(240,240,240); text-align: justify; font-size: 12px; width: 360px;'\n"
   " onclick='document.getElementById('PopUp').style.display = 'none''>\n"
@@ -220,7 +239,8 @@ void dumpScreenRam(){
 void VICIIRefresh(){
   wdt_disable();
 
-  //handle keypresses
+//server.setContentLength(CONTENT_LENGTH_UNKNOWN);
+//handle keypresses
   if (server.args()){
      //Serial.println("keyDown: ");
      //code using http://commodore64.se/wiki/index.php/Commodore_64_RAM_Addresses    
@@ -297,6 +317,9 @@ void setup () {
 unsigned long cycles=0;
 
 void initWifi(){
+  APsetup();
+}
+void initWifi_client(){ // not used with captive
   // Start Wifi
   WiFi.begin(ssid, password);
 
@@ -312,10 +335,12 @@ void initServer(){
   // set comm. pages    
   server.on ( "/",[]() {
                     Serial.println("Root page called"); 
+                    //server.setContentLength(CONTENT_LENGTH_UNKNOWN);
                     server.send_P ( 200, "text/html", gui); 
                    });
   server.on ( "/VICII.js",[]() {
                     Serial.println("Javascript loaded"); 
+                    //server.setContentLength(CONTENT_LENGTH_UNKNOWN);
                     server.send_P ( 200, "text/plain", vicii); 
                    });             
   server.on ( "/VICIIRefresh", VICIIRefresh);
@@ -345,8 +370,8 @@ void loop () {
   if (fase!=4) {fase++;return;}
   
   server.handleClient();
+  APloop();
   
   exec6502(EXECUTES_PER_RUN);    
   cycles++;
 }
-
