@@ -4,9 +4,7 @@ This is a C64 Emulator running on an esp8266 using a webbrowser as a display.
 For more info see [http://www.esp8266.com/viewtopic.php?f=8&t=4704&p=28932#p28932](http://www.esp8266.com/viewtopic.php?f=8&t=4704&p=28932#p28932).
 The code was based upon [http://forum.arduino.cc/index.php?topic=193216.msg1793065#msg1793065](http://forum.arduino.cc/index.php?topic=193216.msg1793065#msg1793065)
 
-### Chrome browsers are incompatible !
-Compatibility is with Interfernet Exploder Browser from MickeySuck running on Winblows IO (tested).
-Error is commented in source for you...
+### Android phones are incompatible due missing keyboard
 
 ### Code is now prepared for
 - Arduino IDE 1.8.10
@@ -19,9 +17,8 @@ Error is commented in source for you...
 2. Start Arduino editor and open the ino file
 3. Upload the ino file to the esp8266
 4. This sketch will create free WiFi-AP named Commodore 64
-5. tap on it, it does it all after connecting
-6. If does not do it all, go to any address, eg. commodore.com or whatever else...
-7. Enjoy...
+5. tap on it
+6. Enjoy...
 
 ### Have fun
 You should now see the startup screen of de C64!
@@ -30,9 +27,10 @@ You should now see the startup screen of de C64!
 
 ### BASIC example
 ```basic
-10 FOR I = 1 TO 10
-20 PRINT "HELLO WORLD"
-30 NEXT I
+  10 FOR I = 1 TO 10
+  20 PRINT "HELLO WORLD"
+  30 NEXT I
+  RUN
 ```
 Using pokes you can change the background color, position of text and write character to screen:
 ```basic
@@ -43,6 +41,7 @@ Of course you can also enter simple programs like:
 ```basic
   10 PRINT "C64 lives!"
   20 GOTO 10
+  RUN
 ```
 
 ### Tetris BASIC code example
@@ -66,10 +65,9 @@ But such a pity, clipboard does not work...
 ```
 Note that the {CBM-x} represents the graphic on that particular key (press the c= key and the letter to produce it)
 
-For more examples go here: 
+For more examples follow links at: 
 https://github.com/matgoebl/esp8266-ntsc-c64-emulator/tree/master/prg
 https://gkanold.wixsite.com/homeputerium/kopie-von-games-list-2019-2
 
 ### Remarks regarding speed:
 The emulation speed within the esp8266 is higher than the update speed of the browser. The maximum speed of the browser implementation is 5 frames per second, possibly due to the use of the XMLHTTP protocol! Any ideas/code suggestions how to solve this are most welcome!
-
