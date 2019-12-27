@@ -16,8 +16,8 @@ The code was based upon [http://forum.arduino.cc/index.php?topic=193216.msg17930
 1. Extract the files in the zip
 2. Start Arduino editor and open the ino file
 3. Upload the ino file to the esp8266
-4. This sketch will create free WiFi-AP named Commodore 64
-5. tap on it
+4. This sketch will create a free WiFi-AP named Commodore 64
+5. Tap on it
 6. Enjoy...
 
 ### Have fun
