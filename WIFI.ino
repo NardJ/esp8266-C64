@@ -2,7 +2,6 @@
 #include <DNSServer.h>
 
 const byte DNS_PORT = 53;
-//IPAddress apIP(172, 217, 28, 1);
 IPAddress apIP(10, 1, 1, 1);
 DNSServer dnsServer;
 
@@ -18,7 +17,6 @@ void APsetup() {
 // replay to all requests with same HTML
   server.onNotFound([]() {
     Serial.println("Captive page..."); 
-    //server.send(200, "text/html", "<h1><br><br><a href=http://10.1.1.1/>Commodore C-64 BASIC emulator</a><br><br></h1>");
     server.send_P ( 200, "text/html", gui); 
     //SerialNotFound(); // uncomment for request diagnostics
   });
