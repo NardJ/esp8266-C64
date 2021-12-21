@@ -9,10 +9,10 @@ mkdir -p $DIR/web
 mkdir -p $DIR/out/b64
 
 
-for filepath in $DIR/web/images/*; do
-	filename=$(basename $filepath)
-	base64 -w 0 $filepath > $DIR/out/b64/$filename.b64
-done
+#for filepath in $DIR/web/images/*; do
+#	filename=$(basename $filepath)
+#	base64 -w 0 $filepath > $DIR/out/b64/$filename.b64
+#done
 
 for filepath in $DIR/web/*.html; do
 	filename=$(basename $filepath)
