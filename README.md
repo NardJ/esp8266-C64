@@ -20,7 +20,7 @@ The code was based upon [http://forum.arduino.cc/index.php?topic=193216.msg17930
 5. Set WIFI_MODE in line 37 to use host/client mode 
 6. Create secret.sh file with two lines: #define STASSID "Your SSID" #define STAPSK "Your password"
 7. Upload the ino file to the esp8266
-8. This sketch will create a free WiFi-AP named STASSID or will connect to your wifi router, the IP will be on the serial monitor
+8. This sketch will create a free WiFi-AP named STASSID or connect to your wifi router, the IP will be on the serial monitor
 10. Enjoy...
 
 ### Have fun
