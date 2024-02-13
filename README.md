@@ -14,11 +14,14 @@ The code was based upon [http://forum.arduino.cc/index.php?topic=193216.msg17930
 
 ### Installation
 1. Extract the files in the zip
-2. Start Arduino editor and open the ino file
-3. Upload the ino file to the esp8266
-4. This sketch will create a free WiFi-AP named Commodore 64
-5. Tap on it
-6. Enjoy...
+2. Run generate.sh
+3. Start Arduino editor and open the ino file
+4. Setup above settings in editor
+5. Set WIFI_MODE in line 37 to use host/client mode 
+6. Create secret.sh file with two lines: #define STASSID "Your SSID" #define STAPSK "Your password"
+7. Upload the ino file to the esp8266
+8. This sketch will create a free WiFi-AP named STASSID or connect to your wifi router, the IP will be on the serial monitor
+10. Enjoy...
 
 ### Have fun
 You should now see the startup screen of de C64!
@@ -45,7 +48,7 @@ Of course you can also enter simple programs like:
 ```
 
 ### Tetris BASIC code example
-But such a pity, clipboard does not work...
+Clipboard does work, use CTRL+V (dont paste too much text)...
 ```basic
 1 a$="efijefijefijefijbfjnhijkbfjnhijkijfgaefjijfgaefjefjkiefbefjkiefbbfjidefj" 
 2 a$=a$+"abeieijkaeijijkgabfjiefgehijebfj@abe@dhe":o=207:dime(o):forx=0to111 
@@ -70,4 +73,4 @@ https://github.com/matgoebl/esp8266-ntsc-c64-emulator/tree/master/prg
 https://gkanold.wixsite.com/homeputerium/kopie-von-games-list-2019-2
 
 ### Remarks regarding speed:
-The emulation speed within the esp8266 is higher than the update speed of the browser. The maximum speed of the browser implementation is 5 frames per second, possibly due to the use of the XMLHTTP protocol! Any ideas/code suggestions how to solve this are most welcome!
+The emulation speed within the esp8266 is close to the update speed of the browser.

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  lang="en-US">
+<head>
+    <title>C64</title>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate' />
+    <meta http-equiv='Pragma' content='no-cache' />
+    <meta http-equiv='Expires' content='0' />
+    <script src='VICII.js' type="text/javascript"></script>
+</head>
+<body>
+    <h1 style='font-family:Lucida Console;font-size:32px;margin:0px;padding:0px'>Commodore C-64</h1>
+    <!--<div id='fps' style='display:none'></div>-->
+    <!--<div id='fps' style='display:none;background-color:#FFFFAA;border:1px solid black;width:42px;height:24px;text-align:center;line-height:22px;font-size:12px;'>10 fps</div>-->
+    <div id = 'content-wrapper' style="background-color: #0088FF; float: left;">
+        <pre id ='content' style='
+        font-family: Lucida Console,monospace;
+    font-size: 10px;
+    color: #08F;
+    background-color: #00A;
+    width: 300px;
+    margin: 32px;
+    height: 200px;
+    text-align: left;
+    line-height: 8px;
+    font-stretch: expanded;
+    letter-spacing: 0.094pc;
+    '></pre>
+    </div>
+    <!--<canvas id='vicoutput' style='background-color:#333333;border:1px;width:384px;height:264px;'></canvas>-->
+    <!--<canvas id='vicoutput' style='background-color:#A4A4FE;border:1px;width:384px;height:264px;'></canvas>-->
+    <DIV id='Log' style='display:none'></div>
+    <!--<DIV id='Log' style='display:none;background-color:#FFFFAA;width:378px;height:80px;border:1px solid black;font-family:Lucida console;font-size:10px;padding:2px;overflow:auto;'></div>-->
+    <DIV id='PopUp'
+     style='display: none; position: absolute; left: 30px; top: 50px; border: solid black 1px; padding: 10px; background-color: rgb(240,240,240); text-align: justify; font-size: 12px; width: 360px;'
+     onclick="document.getElementById('PopUp').style.display = 'none'">
+    <SPAN id='PopUpText' style='font-family:Lucida Console;letter-spacing: 2px;'>TEXT</SPAN>
+    </DIV>
+    <div id='showkbd'><input type=text id='android' name=android></div>
+    <!--some tries to show android keyboard, but...-->
+    <script>
+      var target = document.getElementById('android');
+      target.focus();target.click();   // Android "show keyboard" command
+    document.getElementById('showkbd').style.visibility = 'hidden';
+    </script>
+</body>
+</html>
